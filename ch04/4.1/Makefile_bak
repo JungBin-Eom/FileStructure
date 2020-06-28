@@ -1,0 +1,12 @@
+CFLAGS= -Wall 
+OBJS1 = Person.o Readper.o Writestr.o ex4_1Main.o
+OBJS2 = Person.o Readdel.o Writedel.o ex4_2Main.o
+all: ex4_1 ex4_2
+%.o: %.cpp
+	g++ -c -o $@ $(CFLAGS) $<
+ex4_1: $(OBJS1)
+	g++ -o ex4_1 $(OBJS1)
+ex4_2: $(OBJS2)
+	g++ -o ex4_2 $(OBJS2)
+clean:
+	-rm ex4_1 ex4_2 $(OBJS1) $(OBJS2)
